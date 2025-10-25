@@ -21,13 +21,13 @@ function App() {
 
   useEffect(() => {
     const paths = {
-      "/": "Gamehub - Discover Indie Games",
-      "/about": "Gamehub - About",
+      "/": "Firesheild-Game-Library",
+      "/about": "FGS | About",
     };
-    let title = paths[location.pathname] || "Gamehub - Game Library";
+    let title = paths[location.pathname] || "FGS | Game Library";
     const gameId = location.pathname.split("/").pop();
     const game = data.games?.find((g) => g.id === gameId);
-    if (game) title = `Gamehub - ${game.title}`;
+    if (game) title = `FGS | ${game.title}`;
     document.title = title;
   }, [location, data]);
 

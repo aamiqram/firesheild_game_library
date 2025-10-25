@@ -1,2 +1,57 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+:root {
+  --neon-purple: #8b5cf6;
+  --neon-pink: #ec4899;
+  --neon-cyan: #06b6d4;
+  --urban-dark: #0f0f23; /* Deep navy */
+  --urban-grey: #334155; /* Warm grey for text */
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  background: linear-gradient(135deg, var(--urban-dark), #1a1a2e);
+  color: #f1f5f9; /* Off-white text */
+}
+
+/* Navbar & Footer light accents */
+.navbar,
+.footer {
+  background: rgba(15, 15, 35, 0.8); /* Dark glass */
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--neon-purple) / 20;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6);
+}
+
+.card {
+  background: rgba(26, 26, 46, 0.9); /* Dark with transparency */
+  border: 1px solid var(--neon-purple) / 30;
+  color: #f1f5f9;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 35, 0.9),
+    rgba(26, 26, 46, 0.9)
+  );
+}
+
+/* Hover glows */
+*:hover {
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "1",
+    "title": "Valorant",
+    "coverPhoto": "https://egamersworld.com/uploads/blog/1/17/1737374602548_1737374602548.webp",
+    "category": "FPS",
+    "downloadLink": "https://playvalorant.com/",
+    "description": "A 5v5 competitive tactical shooter with unique agent abilities.",
+    "ratings": "4.7",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "2",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://images.squarespace-cdn.com/content/v1/62f1fe2ea8990e69272321f1/1712628063796-XUH7L0W37VSOWDIS69ZQ/maxresdefault.png",
+    "category": "Adventure",
+    "downloadLink": "https://genshin.hoyoverse.com/",
+    "description": "Anime-styled open-world RPG with elemental combat.",
+    "ratings": "4.6",
+    "developer": "miHoYo"
+  },
+  {
+    "id": "3",
+    "title": "PUBG Mobile",
+    "coverPhoto": "https://activeplayer.io/wp-content/uploads/2022/07/PubG-Player-Statistics-Live-Pubg-Player-Count-1.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.pubgmobile.com/",
+    "description": "Battle royale where 100 players fight for survival.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "4",
+    "title": "Call of Duty Mobile",
+    "coverPhoto": "https://cdn.prod.website-files.com/65956e2711516206d2d1258f/6634c7715af10f24b00dc7b1_CODM%202663x1384.webp",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "Fast-paced multiplayer and battle royale combat.",
+    "ratings": "4.4",
+    "developer": "Activision"
+  },
+  {
+    "id": "5",
+    "title": "Clash of Clans",
+    "coverPhoto": "https://wallpapers.com/images/hd/clash-of-clans-battle-mejez09j0x7vpknn.jpg",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashofclans/",
+    "description": "Build, defend, and raid in this strategy clash game.",
+    "ratings": "4.4",
+    "developer": "Supercell"
+  },
+  {
+    "id": "6",
+    "title": "Among Us",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/945360/capsule_616x353.jpg?t=1728100000",
+    "category": "Party",
+    "downloadLink": "https://www.innersloth.com/",
+    "description": "A social deduction game about teamwork and betrayal.",
+    "ratings": "4.3",
+    "developer": "Innersloth"
+  },
+  {
+    "id": "7",
+    "title": "Minecraft",
+    "coverPhoto": "https://cdn.mos.cms.futurecdn.net/32aRQrSLcSdksZEyuLUftQ-1200-80.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/",
+    "description": "Create your own world and explore infinite possibilities.",
+    "ratings": "4.9",
+    "developer": "Mojang"
+  },
+  {
+    "id": "8",
+    "title": "Apex Legends",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/capsule_616x353.jpg?t=1728100000",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.ea.com/games/apex-legends",
+    "description": "Hero-based battle royale with dynamic movement.",
+    "ratings": "4.2",
+    "developer": "Respawn"
+  },
+  {
+    "id": "9",
+    "title": "Fortnite",
+    "coverPhoto": "https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/cm9wwjg2r2n9e08n4hrfeouns",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.epicgames.com/fortnite/",
+    "description": "Colorful battle royale with building mechanics.",
+    "ratings": "4.1",
+    "developer": "Epic Games"
+  },
+  {
+    "id": "10",
+    "title": "League of Legends",
+    "coverPhoto": "https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/EGS_LeagueofLegends_RiotGames_S1_2560x1440-47eb328eac5ddd63ebd096ded7d0d5ab",
+    "category": "MOBA",
+    "downloadLink": "https://www.leagueoflegends.com/",
+    "description": "Multiplayer battle arena with strategic combat.",
+    "ratings": "4.7",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "11",
+    "title": "Dota 2",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/570/capsule_616x353.jpg?t=1728100000",
+    "category": "MOBA",
+    "downloadLink": "https://www.dota2.com/",
+    "description": "Deep team strategy and competitive gameplay.",
+    "ratings": "4.6",
+    "developer": "Valve"
+  },
+  {
+    "id": "12",
+    "title": "Rocket League",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/252950/capsule_616x353.jpg?t=1728100000",
+    "category": "Sports",
+    "downloadLink": "https://www.rocketleague.com/",
+    "description": "Soccer but with rocket-powered cars!",
+    "ratings": "4.6",
+    "developer": "Psyonix"
+  },
+  {
+    "id": "13",
+    "title": "Cyberpunk 2077",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/capsule_616x353.jpg?t=1728100000",
+    "category": "RPG",
+    "downloadLink": "https://www.cyberpunk.net/",
+    "description": "Action RPG set in a dystopian cyber city.",
+    "ratings": "4.3",
+    "developer": "CDPR"
+  },
+  {
+    "id": "14",
+    "title": "Elden Ring",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/1245620/capsule_616x353.jpg?t=1728100000",
+    "category": "RPG",
+    "downloadLink": "https://en.bandainamcoent.eu/elden-ring",
+    "description": "Vast open-world action RPG by FromSoftware.",
+    "ratings": "4.9",
+    "developer": "FromSoftware"
+  },
+  {
+    "id": "15",
+    "title": "Roblox",
+    "coverPhoto": "https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2020/11/roblox.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.roblox.com/",
+    "description": "Game platform with millions of user-created games!",
+    "ratings": "4.4",
+    "developer": "Roblox Corporation"
+  },
+  {
+    "id": "16",
+    "title": "BGMI",
+    "coverPhoto": "https://www.hindustantimes.com/ht-img/img/2025/07/16/1600x900/BGMI_3_9_update_1752650147682_1752650147798.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.battlegroundsmobileindia.com/",
+    "description": "Indian version of PUBG Mobile.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "17",
+    "title": "Asphalt 9",
+    "coverPhoto": "https://xboxwire.thesourcemediaassets.com/sites/2/2021/09/A9_XBOXSTORE_HOMESTORE_1920x1080-1_JPG.jpg",
+    "category": "Racing",
+    "downloadLink": "https://www.gameloft.com/game/asphalt-9",
+    "description": "High-speed racing with supercars.",
+    "ratings": "4.2",
+    "developer": "Gameloft"
+  },
+  {
+    "id": "18",
+    "title": "Fall Guys",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/1097150/capsule_616x353.jpg?t=1728100000",
+    "category": "Party",
+    "downloadLink": "https://www.fallguys.com/",
+    "description": "Massive multiplayer party knockout!",
+    "ratings": "4.1",
+    "developer": "Mediatonic"
+  },
+  {
+    "id": "19",
+    "title": "Free Fire",
+    "coverPhoto": "https://dl.dir.freefiremobile.com/common/web_event/hash/54f31449f5f91cf0cc223cc635cd5952jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://ff.garena.com/",
+    "description": "Fast 10-minute survival battles.",
+    "ratings": "4.0",
+    "developer": "Garena"
+  },
+  {
+    "id": "20",
+    "title": "Horizon Zero Dawn",
+    "coverPhoto": "https://cdn.akamai.steamstatic.com/steam/apps/1151640/capsule_616x353.jpg?t=1728100000",
+    "category": "Adventure",
+    "downloadLink": "https://www.guerrilla-games.com/play/horizon",
+    "description": "Aloy's adventure in a robot-filled world.",
+    "ratings": "4.8",
+    "developer": "Guerrilla Games"
+  }
+]

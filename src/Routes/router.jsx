@@ -1,28 +1,40 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import { auth } from "../firebase.js";
 import gamesData from "../data/games.json";
 import App from "../App.jsx";
 import Home from "../layouts/Home.jsx";
-import AllGames from "../components/AllGames.jsx";
-import GameDetails from "../components/GameDetails.jsx";
+import Login, { action as loginAction } from "../components/Login.jsx";
+import Register, { action as registerAction } from "../components/Register.jsx";
+import ForgotPassword from "../components/ForgotPassword.jsx";
+import MyProfile, {
+  loader as profileLoader,
+} from "../components/MyProfile.jsx";
+import UpdateProfile, {
+  action as updateAction,
+} from "../components/UpdateProfile.jsx";
+import GameDetails, {
+  loader as detailsLoader,
+} from "../components/GameDetails.jsx";
 import About from "../components/About.jsx";
+import AllGames from "../components/AllGames.jsx";
 import NotFound from "../components/NotFound.jsx";
+import ProtectedLayout from "../components/ProtectedLayout.jsx";
 
-// Simple static loader for data
-const rootLoader = () => ({ games: gamesData });
+export const rootLoader = async () => ({ games: gamesData });
 
-// Home loader
+export const requireAuth = () => {
+  const user = getAuth().currentUser;
+  if (!user) throw redirect("/login");
+  return user;
+};
+
 export const homeLoader = async () => {
   const data = await rootLoader();
   return {
     ...data,
     popularGames: data.games.sort((a, b) => b.ratings - a.ratings).slice(0, 4),
   };
-};
-
-const gameLoader = ({ params }) => {
-  const game = gamesData.find((g) => g.id === params.id);
-  if (!game) throw new Response("Not Found", { status: 404 });
-  return { game };
 };
 
 const router = createBrowserRouter([
@@ -40,16 +52,49 @@ const router = createBrowserRouter([
       {
         path: "all-games",
         element: <AllGames />,
-        loader: rootLoader, // Loads all games
+        loader: rootLoader,
       },
       {
         path: "game/:id",
-        element: <GameDetails />,
-        loader: gameLoader,
+        element: (
+          <ProtectedLayout>
+            <GameDetails />
+          </ProtectedLayout>
+        ),
+        loader: detailsLoader,
       },
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "my-profile",
+        element: (
+          <ProtectedLayout>
+            <MyProfile />
+          </ProtectedLayout>
+        ),
+        loader: profileLoader,
+      },
+      {
+        path: "update-profile",
+        element: <UpdateProfile />,
+        action: updateAction,
+        loader: requireAuth,
+      },
+      {
+        path: "login",
+        element: <Login />,
+        action: loginAction,
+      },
+      {
+        path: "register",
+        element: <Register />,
+        action: registerAction,
+      },
+      {
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
     ],
   },

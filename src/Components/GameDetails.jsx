@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
 import { redirect } from "react-router-dom";
+import { requireAuth } from "../Routes/router.jsx"; // ADD: Import (unused now, but for consistency)
 
 export const loader = async ({ params }) => {
   const { id } = params;
@@ -8,7 +9,7 @@ export const loader = async ({ params }) => {
   const game = games.find((g) => g.id === id);
   if (!game) throw new Response("Not Found", { status: 404 });
 
-  requireAuth(); // Protects the page
+  // REMOVED: requireAuth(); – Now handled by ProtectedLayout wrapper
   return { game };
 };
 
@@ -26,12 +27,12 @@ const GameDetails = () => {
           <img
             src={game.coverPhoto}
             alt={game.title}
-            className="rounded-xl w-full h-full object-cover"
+            className="rounded-xl w-full max-h-96 object-cover"
           />
         </figure>
         <div className="card-body items-center text-center">
           <h1 className="card-title text-neon-pink text-3xl">{game.title}</h1>
-          <div className="stats md:stats-horizontal xl:stats-horizontal lg:stats-horizontal stats-vertical w-full">
+          <div className="stats stats-horizontal w-full">
             <div className="stat">
               <div className="stat-title">Category</div>
               <div className="stat-value">{game.category}</div>

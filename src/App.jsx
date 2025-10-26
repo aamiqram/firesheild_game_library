@@ -1,5 +1,7 @@
 import { Outlet, useLoaderData, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { motion, useScroll } from "framer-motion";
@@ -7,9 +9,9 @@ import { motion, useScroll } from "framer-motion";
 function App() {
   const data = useLoaderData();
   const location = useLocation();
+  const [user, loading] = useAuthState(auth);
   const { scrollY } = useScroll();
 
-  // Mouse trail
   useEffect(() => {
     const handleMouseMove = (e) => {
       document.body.style.setProperty("--mouse-x", e.clientX + "px");
@@ -22,6 +24,10 @@ function App() {
   useEffect(() => {
     const paths = {
       "/": "Firesheild-Game-Library",
+      "/login": "FGS | Login",
+      "/register": "FGS | Register",
+      "/my-profile": "FGS | My Profile",
+      "/update-profile": "FGS | Update Profile",
       "/about": "FGS | About",
     };
     let title = paths[location.pathname] || "FGS | Game Library";
@@ -31,19 +37,34 @@ function App() {
     document.title = title;
   }, [location, data]);
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-[#1a1a2e] to-slate-900">
+        {" "}
+        // FIXED: Standard gradient
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    );
+  }
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="min-h-screen bg-linear-to-br from-[#1a1a2e] to-slate-900 relative overflow-hidden"
-      style={{ y: scrollY * -0.5 }} // Parallax body
-    >
-      <Header />
-      <main className="flex-1 relative z-10">
-        <Outlet context={{ games: data.games }} />
-      </main>
-      <Footer />
-    </motion.div>
+    <div className="min-h-screen relative overflow-hidden">
+      <motion.div
+        className="fixed inset-0 bg-linear-to-br from-[#1a1a2e] to-slate-900 pointer-events-none z-0"
+        style={{ y: scrollY * -0.5 }}
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="relative z-10" // FIXED: Content layer above parallax
+      >
+        <Header user={user} />
+        <main className="flex-1 relative">
+          <Outlet context={{ games: data.games }} />
+        </main>
+        <Footer />
+      </motion.div>
+    </div>
   );
 }
 

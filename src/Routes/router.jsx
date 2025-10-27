@@ -7,9 +7,8 @@ import Home from "../layouts/Home.jsx";
 import Login, { action as loginAction } from "../components/Login.jsx";
 import Register, { action as registerAction } from "../components/Register.jsx";
 import ForgotPassword from "../components/ForgotPassword.jsx";
-import MyProfile, {
-  loader as profileLoader,
-} from "../components/MyProfile.jsx";
+import MyProfile from "../components/MyProfile";
+
 import UpdateProfile, {
   action as updateAction,
 } from "../components/UpdateProfile.jsx";
@@ -74,7 +73,6 @@ const router = createBrowserRouter([
             <MyProfile />
           </ProtectedLayout>
         ),
-        loader: profileLoader,
       },
       {
         path: "update-profile",

@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
 import { redirect } from "react-router-dom";
-import { requireAuth } from "../Routes/router.jsx"; // ADD: Import (unused now, but for consistency)
+import { requireAuth } from "../Routes/router.jsx";
 
 export const loader = async ({ params }) => {
   const { id } = params;
@@ -9,7 +9,6 @@ export const loader = async ({ params }) => {
   const game = games.find((g) => g.id === id);
   if (!game) throw new Response("Not Found", { status: 404 });
 
-  // REMOVED: requireAuth(); – Now handled by ProtectedLayout wrapper
   return { game };
 };
 

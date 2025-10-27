@@ -40,8 +40,6 @@ function App() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-[#1a1a2e] to-slate-900">
-        {" "}
-        // FIXED: Standard gradient
         <div className="text-white text-xl">Loading...</div>
       </div>
     );
@@ -56,7 +54,7 @@ function App() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative z-10" // FIXED: Content layer above parallax
+        className="relative z-10"
       >
         <Header user={user} />
         <main className="flex-1 relative">

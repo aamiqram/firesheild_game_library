@@ -48,11 +48,11 @@ const ForgotPassword = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="email@domain.com"
-                className="input input-bordered"
+                className="input input-bordered text-black"
                 required
               />
             </div>
-            <div className="form-control mt-6">
+            <div className="form-control mt-4">
               <button type="submit" className="btn btn-primary">
                 Reset Password
               </button>
@@ -70,7 +70,7 @@ const ForgotPassword = () => {
           <div className="card-actions justify-center">
             <button
               onClick={() => navigate("/login")}
-              className="btn btn-ghost"
+              className="btn btn-ghost mb-2"
             >
               Back to Login
             </button>

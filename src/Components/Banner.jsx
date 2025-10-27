@@ -15,7 +15,7 @@ const Banner = () => {
   const { scrollY } = useScroll();
 
   const y = useMotionValue(0);
-  const yImage = useTransform(y, [0, 100], [0, -50]); // Parallax shift
+  const yImage = useTransform(y, [0, 100], [0, -50]);
 
   useEffect(() => {
     const interval = setInterval(
@@ -26,7 +26,7 @@ const Banner = () => {
   }, [bannerGames.length]);
 
   return (
-    <section className="relative h-120 md:h-[500px] overflow-hidden rounded-lg my-8 bg-linear-to-r from-[#1a1a2e] to-[#16213e]">
+    <section className="relative h-120 md:h-[500px] overflow-hidden rounded-lg bg-linear-to-r from-[#1a1a2e] to-[#16213e]">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}

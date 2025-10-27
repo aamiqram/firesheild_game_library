@@ -1,104 +1,132 @@
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { FaTwitter, FaSteam, FaDiscord, FaGithub } from "react-icons/fa";
 
-const Footer = () => (
-  <motion.footer
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="footer p-8 bg-linear-to-r from-urban-dark to-[#1a1a2e]/80 backdrop-blur-xl border-t border-neon-purple/30 relative overflow-hidden shadow-xl"
-  >
-    {/* Neon divider line */}
-    <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-neon-pink via-neon-purple to-neon-cyan animate-pulse" />
+const Footer = () => {
+  const [currentYear, setCurrentYear] = useState(2025);
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-      <motion.div
-        className="text-center md:text-left"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-      >
-        <p className="text-lg font-bold text-neon-cyan mb-2">© 2025 Gamehub</p>
-        <p className="text-sm text-urban-grey flex items-center justify-center md:justify-start">
-          Made with{" "}
-          <motion.span className="mx-1 text-neon-pink animate-pulse">
-            ♥
-          </motion.span>{" "}
-          for indie devs
-        </p>
-      </motion.div>
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
-      <motion.ul
-        className="menu menu-horizontal justify-center gap-4"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.4 }}
-      >
-        <li>
-          <Link
-            to="/"
-            className="text-f1f5f9 hover:text-neon-pink transition-colors duration-300 font-medium"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/all-games"
-            className="text-f1f5f9 hover:text-neon-pink transition-colors duration-300 font-medium"
-          >
-            All Games
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/about"
-            className="text-f1f5f9 hover:text-neon-pink transition-colors duration-300 font-medium"
-          >
-            About
-          </Link>
-        </li>
-      </motion.ul>
+  return (
+    <footer className="relative overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 border-t border-purple-500/20 shadow-2xl">
+      <div className="container mx-auto px-6 py-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-4">
+          {/* Brand Section */}
+          <div className="text-left">
+            <div className="flex flex-col items-center md:items-start mb-2">
+              <h3 className="text-4xl font-bold bg-linear-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent mb-2">
+                Gamehub
+              </h3>
+              <p className="text-lg text-gray-400 max-w-xs">
+                Your ultimate hub for discovering and supporting indie games.
+                Dive into worlds crafted with passion.
+              </p>
+            </div>
+            <div className="flex items-center justify-center md:justify-start">
+              <p className="text-sm text-gray-400">
+                Made with{" "}
+                <span className="mx-1 text-pink-500 inline-block">♥</span> for
+                indie devs
+              </p>
+            </div>
+          </div>
 
-      <motion.div
-        className="flex flex-col sm:flex-row justify-center md:justify-end gap-4 text-center md:text-right"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.6 }}
-      >
-        <motion.a
-          href="https://twitter.com"
-          target="_blank"
-          rel="noopener"
-          className="text-sm text-neon-cyan hover:scale-110 transition-transform duration-300 font-medium"
-          whileHover={{ color: "#ec4899" }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Twitter
-        </motion.a>
-        <motion.a
-          href="https://store.steampowered.com"
-          target="_blank"
-          rel="noopener"
-          className="text-sm text-neon-purple hover:scale-110 transition-transform duration-300 font-medium"
-          whileHover={{ color: "#ec4899" }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Steam
-        </motion.a>
-        <motion.a
-          href="https://discord.com"
-          target="_blank"
-          rel="noopener"
-          className="text-sm text-neon-pink hover:scale-110 transition-transform duration-300 font-medium"
-          whileHover={{ color: "#06b6d4" }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Discord
-        </motion.a>
-      </motion.div>
-    </div>
-  </motion.footer>
-);
+          {/* Navigation Links */}
+          <div className="text-center">
+            <h4 className="text-xl font-semibold text-cyan-400 mb-6">
+              Navigation
+            </h4>
+            <ul className="space-y-3 text-lg">
+              {[
+                { to: "/", label: "Home" },
+                { to: "/all-games", label: "All Games" },
+                { to: "/about", label: "About" },
+              ].map((item) => (
+                <li key={item.to}>
+                  <a
+                    href={item.to}
+                    className="block text-gray-400 hover:text-pink-500 transition-all duration-300 font-medium hover:translate-x-2"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social Links */}
+          <div className="text-center">
+            <h4 className="text-xl font-semibold text-cyan-400 mb-6">
+              Connect With Us
+            </h4>
+            <ul className="space-y-3 text-lg">
+              {[
+                {
+                  href: "https://twitter.com",
+                  Icon: FaTwitter,
+                  color: "text-cyan-400",
+                  label: "Twitter",
+                },
+                {
+                  href: "https://store.steampowered.com",
+                  Icon: FaSteam,
+                  color: "text-purple-500",
+                  label: "Steam",
+                },
+                {
+                  href: "https://discord.com",
+                  Icon: FaDiscord,
+                  color: "text-pink-500",
+                  label: "Discord",
+                },
+                {
+                  href: "https://github.com",
+                  Icon: FaGithub,
+                  color: "text-gray-400",
+                  label: "GitHub",
+                },
+              ].map((social) => (
+                <li key={social.href}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block ${social.color} hover:text-pink-500 transition-all duration-300 font-medium hover:translate-x-2`}
+                    aria-label={social.label}
+                  >
+                    <social.Icon className="mr-2 inline text-xl" />
+                    {social.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-purple-500/10 pt-4 flex flex-col md:flex-row justify-between items-center text-center text-xl text-gray-400">
+          <p>&copy; {currentYear} Gamehub. All rights reserved.</p>
+          <ul className="flex flex-wrap justify-center md:justify-end space-x-6 mt-2 md:mt-0">
+            {[
+              { to: "/", label: "Privacy Policy" },
+              { to: "/", label: "Terms of Service" },
+              { to: "/", label: "Cookie Policy" },
+            ].map((item) => (
+              <li key={item.to}>
+                <a
+                  href={item.to}
+                  className="hover:text-purple-500 transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

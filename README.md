@@ -45,11 +45,5 @@ Gamehub is an engaging online library designed for discovering and supporting in
 - **daisyui (^5.3.8):** Tailwind component library (btn, card, hero, stats, carousel).
 
 - **@tailwindcss/vite (^4.1.0-alpha.1) & tailwindcss (^4.1.0-alpha.1):** Styling with neon gradients and responsive utilities.
-<<<<<<< HEAD
 
 - **vite (^5.4.8):** Build tool for fast dev server and bundling.
-
-=======
-
-- **vite (^5.4.8):** Build tool for fast dev server and bundling.
->>>>>>> a048395b0d89de179ee52d32100495b5ef703d42

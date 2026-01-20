@@ -1,7 +1,5 @@
 # Firesheild Game Library 🎮
 
-![Firesheild Banner](https://via.placeholder.com/1200x300/8b5cf6/ffffff?text=Firesheild+Game+Library+-+Discover+Indie+Games)
-
 ## 🌐 Live Demo
 **[Visit Firesheild GameHub →](https://firesheild-gamehub.netlify.app)**
 
@@ -199,19 +197,6 @@ Open your browser and navigate to:
 ```
 http://localhost:5173
 ```
-
----
-
-## 📸 Screenshots
-
-### Homepage with Neon Theme
-![Homepage](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Add+Homepage+Screenshot)
-
-### Game Browsing Grid
-![Game Grid](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Add+Game+Grid+Screenshot)
-
-### Game Details Page
-![Game Details](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Add+Game+Details+Screenshot)
 
 ---
 
